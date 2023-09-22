@@ -1,0 +1,25 @@
+{% extends 'users/base.html' %}
+{% block body %}
+<div class="mx-10 my-10">
+    <h2 class="font-bold text-2xl">🏞️ Create Post</h2>
+</div>
+<div class="container mx-10">
+    <form class="shadow-lg rounded p-10 w-2/4" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-8">
+            <label class="block font-bold text-gray-700" for="">Title:</label>
+            <input size="51" name="title" required id="id_title" class="shadow-lg appearance-none border rounded py-2 px-3" type="text">
+        </div>
+        <div class="mb-8">
+            <label class="block font-bold text-gray-700" for="">Caption:</label>
+            <textarea class="shadow-lg appearance-none border rounded py-2 px-3" name="caption" id="id_caption" cols="50" rows="3"></textarea>
+        </div>
+        <div class="mb-8">
+            <label  class="block font-bold text-gray-700" for="">Image:</label>
+            <input style="width: 29rem" name="image" accept="image/*" required id="id_image" class="shadow-lg appearance-none border rounded py-2 px-3" type="file">
+        </div>
+        <button class="bg-green-500 text-white px-3 py-2" type="submit">Post</button>
+    </form>
+</div>
+
+{% endblock %}
